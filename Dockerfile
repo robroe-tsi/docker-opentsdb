@@ -18,6 +18,7 @@ RUN cd /usr/lib \
     && make install
 
 ADD docker_files/opentsdb-run.sh /apps/opentsdb-run.sh
+ADD docker_files/debug-run.sh /apps/debug-run.sh
 
 RUN chmod a+x /apps/*.sh
 
