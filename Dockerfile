@@ -5,14 +5,17 @@ MAINTAINER robroetsi
 USER root 
 
 RUN apt-get update \
-    && apt-get install -y git gnuplot autotools-dev autoconf\
+    && apt-get install -y git gnuplot autotools-dev autoconf make \
     && apt-get clean \
     && apt-get autoclean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/apt/archives/*
 
 RUN cd /usr/lib \
     && git clone https://github.com/OpenTSDB/opentsdb.git \
-    && cd opentsdb && ./build.sh && cd build && make install
+    && cd opentsdb \
+    && ./build.sh \
+    && cd build \
+    && make install
 
 ADD docker_files/opentsdb-run.sh /apps/opentsdb-run.sh
 
