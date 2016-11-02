@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/lib/opentsdb/build/tsdb --config /etc/opentsdb.conf tsd
+/usr/lib/opentsdb/build/tsdb tsd --config /etc/opentsdb.conf
