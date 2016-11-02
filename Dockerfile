@@ -8,9 +8,8 @@ RUN apt-get update \
     && apt-get install -y git gnuplot autotools-dev autoconf make python \
     && apt-get clean \
     && apt-get autoclean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/apt/archives/*
-
-RUN cd /usr/lib \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/apt/archives/* \
+    && cd /usr/lib \
     && git clone https://github.com/OpenTSDB/opentsdb.git \
     && cd opentsdb \
     && ./build.sh \
