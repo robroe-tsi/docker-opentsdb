@@ -22,10 +22,10 @@ ADD docker_files/opentsdb-run.sh /apps/opentsdb-run.sh
 RUN chmod a+x /apps/*.sh
 
 # declare the volumes
-RUN mkdir /etc/hadoop/conf.bb && \
-    update-alternatives --install /etc/hadoop/conf hadoop-conf /etc/hadoop/conf.bb 1 && \
-    update-alternatives --set hadoop-conf /etc/hadoop/conf.bb
-VOLUME /etc/hadoop/conf.bb
+# RUN mkdir /etc/hadoop/conf.bb && \
+#    update-alternatives --install /etc/hadoop/conf hadoop-conf /etc/hadoop/conf.bb 1 && \
+#    update-alternatives --set hadoop-conf /etc/hadoop/conf.bb
+# VOLUME /etc/hadoop/conf.bb
 
 EXPOSE 4242
 
